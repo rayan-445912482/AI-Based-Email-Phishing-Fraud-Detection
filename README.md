@@ -1,115 +1,58 @@
 # AI-Based Email Phishing & Fraud Detection
 
-## Graduation Project
+Final-year graduation project. Detects phishing and fraudulent emails from
+their text using three supervised classifiers: Random Forest, Support Vector
+Machine, and Naive Bayes.
 
-### Project Description
+## Alignment With the Official Proposal
 
-This project aims to develop an AI-based system for detecting phishing and fraudulent emails using machine learning and natural language processing techniques.
+| Proposal Item | Implementation |
+|---------------|----------------|
+| Random Forest, SVM, Naive Bayes | `src/models.py` |
+| NLTK / NLP techniques | `src/preprocessing.py` + `src/nltk_setup.py` |
+| TF-IDF | `src/features.py` |
+| Jupyter Notebook for experiments | `notebooks/01_experiment.ipynb` |
+| Database design (Member 2) | `database/schema.sql` + `database/db.py` (SQLite) |
+| Email characteristics | `src/features.py` (signals + TF-IDF) |
+| Accuracy / Precision / Recall / F1 | `src/evaluation.py` |
+| Interactive prototype (Streamlit) | `app.py` + `views/` |
+| Model comparison | `views/comparison.py` |
+| Error analysis | `src/error_analysis.py` + `views/errors.py` |
+| 7 project stages | This README |
+| 6 members tasks | `views/members.py` |
 
-The system will analyze email content and relevant features and classify emails as legitimate or phishing/fraudulent.
+## Quick Start
 
-Three machine learning algorithms will be implemented and compared:
-
-1. Random Forest
-2. Support Vector Machine (SVM)
-3. Naive Bayes
-
-The models will be evaluated using Accuracy, Precision, Recall, and F1-Score.
-
-## Project Objectives
-
-* Develop an AI-based phishing and fraud email detection system
-* Collect and prepare a suitable email dataset
-* Preprocess email data using NLP techniques
-* Extract relevant features using TF-IDF
-* Develop three machine learning models
-* Train and evaluate the models
-* Compare the performance of the three models
-* Develop an interactive prototype using Streamlit
-* Provide an understandable classification result to the user
-
-## Technologies
-
-* Python
-* Pandas
-* NumPy
-* Scikit-learn
-* NLTK
-* Natural Language Processing
-* TF-IDF
-* Matplotlib
-* Seaborn
-* Streamlit
-* Jupyter Notebook
-
-## Project Team
-
-| No. | Name                               | Student ID |
-| --- | ---------------------------------- | ---------- |
-| 1   | RAYAN ABDULRAHMAN IBRAHIM ALHIRABI | 445912482  |
-| 2   | ALI ASAAD A ALSUWAYRI              | 445912424  |
-| 3   | ABDULELAH FAHAD HAJRS ALOTAIBI     | 445912418  |
-| 4   | HUSSAM MOHAMMED ALMUTAIRI          | 445912416  |
-| 5   | FAISAL TURKI MOHAMMED ALSHEBAIKI   | 446912461  |
-| 6   | FAHAD MUSAAD ALOTAIBI              | 444911608  |
-
-## Main Machine Learning Models
-
-### Random Forest
-
-Used as one of the classification models for detecting phishing and fraudulent emails.
-
-### Support Vector Machine
-
-Used as a classification model for email detection and comparison.
-
-### Naive Bayes
-
-Used as a classification model for email detection and comparison.
-
-## Project Structure
-
-```text
-AI-Based-Email-Phishing-Fraud-Detection/
-│
-├── app/
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── docs/
-│   ├── meetings/
-│   ├── preliminary-study/
-│   └── reports/
-│
-├── models/
-├── notebooks/
-├── results/
-├── src/
-├── tests/
-│
-├── .gitignore
-├── README.md
-└── requirements.txt
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+python -m pip install --upgrade pip
+python -m pip install --only-binary=:all: -r requirements.txt
+python -m src.nltk_setup
+python download_data.py
+python -m src.training
+streamlit run app.py
 ```
 
-## Project Status
+## Project Stages (from Proposal)
 
-Current Stage: Preliminary Study
+1. Requirements and Project Analysis
+2. Dataset Collection and Preparation
+3. Data Preprocessing and Feature Extraction
+4. AI Model Development
+5. Model Training and Evaluation
+6. System Development and Integration
+7. Testing, Comparison, and Documentation
 
-The current work focuses on:
+## Group Members (from Proposal)
 
-* Problem Study
-* Comparable Systems and Related Work
-* Feasibility Study
-* Dataset investigation
-* Project repository setup
-* Project documentation
+1. RAYAN ABDULRAHMAN IBRAHIM ALHIRABI
+2. ALI ASAAD A ALSUWAYRI
+3. ABDULELAH FAHAD HAJRS ALOTAIBI
+4. HUSSAM MOHAMMED ALMUTAIRI
+5. Faisal Turki Mohammed Alshebaiki
+6. FAHAD MUSAAD ALOTAIBI
 
-## Important Security Rule
+## Supervisor
 
-No passwords, API keys, private credentials, personal information, or sensitive email data should be committed to this repository.
-
-## Project Repository
-
-This repository is maintained as a private repository for the graduation project team and supervisor.
+DR. FAHAD ALOTAIBI
